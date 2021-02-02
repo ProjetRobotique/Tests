@@ -1,27 +1,33 @@
-import tkinter as tk
+from tkinter import *
  
 # fenêtre principale
-w = tk.Tk()
+w = Tk()
+w.title("C'est bien parti pour le 100/100")
+w.geometry("720x575")
 w.config(background='#41B77F')
+
+#texte
+label_title = Label(w, text="Bienvenue sur cette fenêtre inutile", font = ("",20), bg='#41B77F', fg='white')
+label_title.pack(side=BOTTOM)
  
-# le tableau à afficher : [0, 0, 0, 0, 0]
+# matrice à deux dimensions
 tableau = []
-for i in range(10):
-    tableau.append([0] * 10)
+for i in range(25):
+    tableau.append([0] * 25)
  
 # les 2 couleurs à utiliser
-couleurs = {0: "white", 1: "blue"}
+couleurs = {0: "white", 1: "#41B77F"}
  
 # dimensions du canevas
 can_width = 500
 can_height = 500
  
 # taille d'une case
-size = 50
+size = 25
  
 # création canevas
-can = tk.Canvas(w, width=can_width, height=can_height, bg='#41B77F')
-can.grid()
+can = Canvas(w, width=can_width, height=can_height)
+can.pack()
  
 def afficher(t):
     """

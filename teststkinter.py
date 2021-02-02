@@ -1,6 +1,6 @@
-from tkinter import *
+import tkinter as tk
 
-window = Tk()
+window = tk.Tk()
 
 window.title("Test Tkinter")
 
