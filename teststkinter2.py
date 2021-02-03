@@ -16,7 +16,7 @@ for i in range(25):
     tableau.append([0] * 25)
  
 # les 2 couleurs à utiliser
-couleurs = {0: "white", 1: "#41B77F", 2:"red"}
+couleurs = {0: "white", 1: "#41B77F", 2:"red"}#0: case vide, 1: obstacle, 2:robot
  
 # dimensions du canevas
 can_width = 500
@@ -43,7 +43,8 @@ def modifierTableau(evt):
     pos_x = int(evt.x / size)
     pos_y = int(evt.y / size)
  
-    # inverser la valeur de l'élément cliqué
+    # inverser la valeur de l'élément cliqué si c'est un obstacle ou une case vide
+    # ne fait rien si on clique sur le robot
     if tableau[pos_x][pos_y] == 2:
         return
     elif tableau[pos_x][pos_y] == 0:
