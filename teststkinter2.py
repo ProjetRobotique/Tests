@@ -16,7 +16,7 @@ for i in range(25):
     tableau.append([0] * 25)
  
 # les 2 couleurs à utiliser
-couleurs = {0: "white", 1: "#41B77F"}
+couleurs = {0: "white", 1: "#41B77F", 2:"red"}
  
 # dimensions du canevas
 can_width = 500
@@ -44,7 +44,9 @@ def modifierTableau(evt):
     pos_y = int(evt.y / size)
  
     # inverser la valeur de l'élément cliqué
-    if tableau[pos_x][pos_y] == 0:
+    if tableau[pos_x][pos_y] == 2:
+        return
+    elif tableau[pos_x][pos_y] == 0:
         tableau[pos_x][pos_y] = 1
     else:
         tableau[pos_x][pos_y] = 0
